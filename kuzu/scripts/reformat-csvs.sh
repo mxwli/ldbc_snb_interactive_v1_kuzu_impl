@@ -10,13 +10,13 @@ if [ ! -d "${KUZU_CSV_DIR}" ]; then
     exit 1
 fi
 
-mkdir -p converted/
-rm -rf converted/*
-mkdir -p converted/static
-mkdir -p converted/dynamic
+mkdir -p test-data/converted/
+rm -rf test-data/converted/*
+mkdir -p test-data/converted/static
+mkdir -p test-data/converted/dynamic
 
 reformat() {
-	if python3 scripts/reformat-csv.py ${KUZU_CSV_DIR}${1}_0_0.csv converted/$1.csv
+	if python3 scripts/reformat-csv.py ${KUZU_CSV_DIR}${1}_0_0.csv test-data/converted/$1.csv
 	then
 		echo "reformatted $1"
 	else

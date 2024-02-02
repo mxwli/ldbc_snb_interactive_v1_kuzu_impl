@@ -2,3 +2,4 @@ target/
 database/
 converted/
 venv/
+history.txt
