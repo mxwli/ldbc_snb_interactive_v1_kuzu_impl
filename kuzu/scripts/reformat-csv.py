@@ -26,9 +26,9 @@ columns = sorted(columns, key=lambda x: not x.endswith('.id'))
 df = df[columns]
 
 if 'language' in columns and pd.api.types.is_string_dtype(df['language']):
-	df['language'] = df['language'].map(lambda x: '[' + x.replace(';',',') + ']')
+	df['language'] = df['language'].map(lambda x: '[' + ','.join([f'\"{i}\"' for i in x.split(';')]) + ']')
 
 if 'email' in columns:
-	df['email'] = df['email'].map(lambda x: '[' + x.replace(';',',') + ']')
+	df['email'] = df['email'].map(lambda x: '[' + ','.join([f'\"{i}\"' for i in x.split(';')]) + ']')
 
 df.to_csv(path_or_buf=output, sep='|', index=False, header=False)
