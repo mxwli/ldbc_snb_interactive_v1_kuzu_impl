@@ -38,7 +38,9 @@ public abstract class KuzuUpdateOperationHandler<TOperation extends Operation<Ld
             KuzuQueryResult result = connection.query(query);
         } catch (KuzuObjectRefDestroyedException e) {
             e.printStackTrace();
+            System.out.println(query);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(query);
         }
 

@@ -41,7 +41,9 @@ public abstract class KuzuSingletonOperationHandler<TOperation extends Operation
             }
         } catch (KuzuObjectRefDestroyedException e) {
             e.printStackTrace();
+            System.out.println(query);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(query);
         }
 

@@ -45,7 +45,9 @@ public abstract class KuzuListOperationHandler<TOperation extends Operation<List
             resultReporter.report(results.size(), results, operation);
         } catch (KuzuObjectRefDestroyedException e) {
             e.printStackTrace();
+            System.out.println(query);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(query);
         }
     }

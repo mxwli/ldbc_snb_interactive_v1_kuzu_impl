@@ -48,7 +48,9 @@ public abstract class KuzuIC13OperationHandler
             }
         } catch (KuzuObjectRefDestroyedException e) {
             e.printStackTrace();
+            System.out.println(query);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(query);
         }
     }
