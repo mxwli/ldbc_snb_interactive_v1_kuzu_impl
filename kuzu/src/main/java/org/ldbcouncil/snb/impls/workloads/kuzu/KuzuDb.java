@@ -171,9 +171,9 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
             long personId = record.getValue( 0 ).getValue();
             String personFirstName = record.getValue( 1 ).getValue();
             String personLastName = record.getValue( 2 ).getValue();
-            int xCount = (int)record.getValue( 3 ).getValue();
-            int yCount = (int)record.getValue( 4 ).getValue();
-            int count = (int)record.getValue( 5 ).getValue();
+            long xCount = record.getValue( 3 ).getValue();
+            long yCount = record.getValue( 4 ).getValue();
+            long count = record.getValue( 5 ).getValue();
             return new LdbcQuery3Result(
                     personId,
                     personFirstName,
@@ -200,8 +200,8 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
         public LdbcQuery4Result toResult( KuzuFlatTuple record ) throws KuzuObjectRefDestroyedException
         {
             String tagName = record.getValue( 0 ).getValue();
-            int postCount = (int)record.getValue( 1 ).getValue();
-            return new LdbcQuery4Result( tagName, postCount );
+            long postCount = record.getValue( 1 ).getValue();
+            return new LdbcQuery4Result( tagName, (int)postCount );
         }
     }
 
@@ -221,8 +221,8 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
         public LdbcQuery5Result toResult( KuzuFlatTuple record ) throws KuzuObjectRefDestroyedException
         {
             String forumTitle = record.getValue( 0 ).getValue();
-            int postCount = (int)record.getValue( 1 ).getValue();
-            return new LdbcQuery5Result( forumTitle, postCount );
+            long postCount = record.getValue( 1 ).getValue();
+            return new LdbcQuery5Result( forumTitle, (int)postCount );
         }
     }
 
@@ -242,8 +242,8 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
         public LdbcQuery6Result toResult( KuzuFlatTuple record ) throws KuzuObjectRefDestroyedException
         {
             String tagName = record.getValue( 0 ).getValue();
-            int postCount = (int)record.getValue( 1 ).getValue();
-            return new LdbcQuery6Result( tagName, postCount );
+            long postCount = record.getValue( 1 ).getValue();
+            return new LdbcQuery6Result( tagName, (int)postCount );
         }
     }
 
@@ -268,7 +268,7 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
             long likeCreationDate = record.getValue( 3 ).getValue();
             long messageId = record.getValue( 4 ).getValue();
             String messageContent = record.getValue( 5 ).getValue();
-            int minutesLatency = (int)record.getValue( 6 ).getValue();
+            long minutesLatency = record.getValue( 6 ).getValue();
             boolean isNew = record.getValue( 7 ).getValue();
             return new LdbcQuery7Result(
                     personId,
@@ -277,7 +277,7 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
                     likeCreationDate,
                     messageId,
                     messageContent,
-                    minutesLatency,
+                    (int)minutesLatency,
                     isNew );
         }
     }
@@ -362,14 +362,14 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
             long personId = record.getValue( 0 ).getValue();
             String personFirstName = record.getValue( 1 ).getValue();
             String personLastName = record.getValue( 2 ).getValue();
-            int commonInterestScore = (int)record.getValue( 3 ).getValue();
+            long commonInterestScore = record.getValue( 3 ).getValue();
             String personGender = record.getValue( 4 ).getValue();
             String personCityName = record.getValue( 5 ).getValue();
             return new LdbcQuery10Result(
                     personId,
                     personFirstName,
                     personLastName,
-                    commonInterestScore,
+                    (int)commonInterestScore,
                     personGender,
                     personCityName );
         }
@@ -394,13 +394,13 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
             String personFirstName = record.getValue( 1 ).getValue();
             String personLastName = record.getValue( 2 ).getValue();
             String organizationName = record.getValue( 3 ).getValue();
-            int organizationWorkFromYear = (int)record.getValue( 4 ).getValue();
+            long organizationWorkFromYear = record.getValue( 4 ).getValue();
             return new LdbcQuery11Result(
                     personId,
                     personFirstName,
                     personLastName,
                     organizationName,
-                    organizationWorkFromYear );
+                    (int)organizationWorkFromYear );
         }
     }
 
