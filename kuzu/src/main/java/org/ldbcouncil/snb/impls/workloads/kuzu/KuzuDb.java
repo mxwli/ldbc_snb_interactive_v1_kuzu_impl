@@ -427,13 +427,13 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
             {
                 tagNames = record.getValue( 3 ).getValue();
             }
-            int replyCount = record.getValue( 4 ).getValue();
+            long replyCount = record.getValue( 4 ).getValue();
             return new LdbcQuery12Result(
                     personId,
                     personFirstName,
                     personLastName,
                     tagNames,
-                    replyCount );
+                    (int)replyCount );
         }
     }
 
