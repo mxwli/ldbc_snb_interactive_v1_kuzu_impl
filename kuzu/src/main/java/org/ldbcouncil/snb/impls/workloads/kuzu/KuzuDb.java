@@ -394,13 +394,13 @@ public class KuzuDb extends BaseDb<KuzuQueryStore>
             String personFirstName = record.getValue( 1 ).getValue();
             String personLastName = record.getValue( 2 ).getValue();
             String organizationName = record.getValue( 3 ).getValue();
-            long organizationWorkFromYear = record.getValue( 4 ).getValue();
+            int organizationWorkFromYear = record.getValue( 4 ).getValue();
             return new LdbcQuery11Result(
                     personId,
                     personFirstName,
                     personLastName,
                     organizationName,
-                    (int)organizationWorkFromYear );
+                    organizationWorkFromYear );
         }
     }
 
