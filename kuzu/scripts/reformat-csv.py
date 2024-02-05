@@ -1,6 +1,7 @@
 
 import pandas as pd
 import sys
+import csv as _csv
 
 csv = sys.argv[1]
 output = sys.argv[2]
@@ -31,4 +32,4 @@ if 'language' in columns and pd.api.types.is_string_dtype(df['language']):
 if 'email' in columns:
 	df['email'] = df['email'].map(lambda x: '[' + ','.join([f'\"{i}\"' for i in x.split(';')]) + ']')
 
-df.to_csv(path_or_buf=output, sep='|', index=False, header=False)
+df.to_csv(path_or_buf=output, sep='|', index=False, header=False, quoting=_csv.QUOTE_NONE)
