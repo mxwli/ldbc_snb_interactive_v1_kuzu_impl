@@ -3,7 +3,7 @@
 MATCH (person:Person {id: $personId})<-[:HAS_CREATOR]-(message:Post:Comment)<-[like:LIKES]-(liker:Person)
     WITH liker, message, like.creationDate AS likeTime, person
     ORDER BY likeTime DESC, to_int64(message.id) ASC SKIP 0
-    WITH liker, collect({msg: message, likeTime: likeTime})[0] AS latestLike, person
+    WITH liker, collect({msg: message, likeTime: likeTime})[1] AS latestLike, person
 RETURN
     liker.id AS personId,
     liker.firstName AS personFirstName,
