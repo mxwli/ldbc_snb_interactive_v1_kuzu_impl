@@ -1,5 +1,5 @@
 
-MATCH (n:Person {id: $personId })-[:IS_LOCATED_IN]->(p:Place {type: "City"})
+MATCH (n:Person {id: $personId })-[:IS_LOCATED_IN]->(p:Place {type: "city"})
 RETURN
     n.firstName AS firstName,
     n.lastName AS lastName,

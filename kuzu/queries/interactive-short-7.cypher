@@ -7,8 +7,5 @@ MATCH (m:Post:Comment {id: $messageId })<-[:REPLY_OF]-(c:Comment)-[:HAS_CREATOR]
         p.id AS replyAuthorId,
         p.firstName AS replyAuthorFirstName,
         p.lastName AS replyAuthorLastName,
-        CASE r
-            WHEN null THEN false
-            ELSE true
-        END AS replyAuthorKnowsOriginalMessageAuthor
+        NOT (r IS NULL) AS replyAuthorKnowsOriginalMessageAuthor
     ORDER BY commentCreationDate DESC, replyAuthorId

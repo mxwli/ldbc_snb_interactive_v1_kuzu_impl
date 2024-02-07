@@ -1,3 +1,8 @@
+## Setup Instructions:
+Build the [driver](https://github.com/ldbc/ldbc_snb_interactive_v1_driver)
+
+Build this repository with `scripts/build.sh`
+
 ## Loading the data:
 run:
 ```
