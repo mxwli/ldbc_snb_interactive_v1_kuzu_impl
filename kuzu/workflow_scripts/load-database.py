@@ -10,7 +10,7 @@ db = kuzu.Database('database')
 conn = kuzu.Connection(db)
 
 idx = 0
-for line in open("scripts/load.cypher", 'r'):
+for line in open("workflow_scripts/load.cypher", 'r'):
 	line = line.replace('\n', '')
 	idx += 1
 	if line == '':

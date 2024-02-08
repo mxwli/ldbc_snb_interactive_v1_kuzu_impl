@@ -10,8 +10,8 @@ if [ ! -d "${KUZU_CSV_DIR}" ]; then
     exit 1
 fi
 
-source scripts/setup-venv.sh
+source workflow_scripts/setup-venv.sh
 
-scripts/clear-database.sh
-scripts/reformat-csvs.sh
-python3 scripts/load-database.py
+workflow_scripts/clear-database.sh
+workflow_scripts/reformat-csvs.sh
+python3 workflow_scripts/load-database.py

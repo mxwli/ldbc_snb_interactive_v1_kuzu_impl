@@ -16,7 +16,7 @@ mkdir -p test-data/converted/static
 mkdir -p test-data/converted/dynamic
 
 reformat() {
-	if python3 scripts/reformat-csv.py ${KUZU_CSV_DIR}${1}_0_0.csv test-data/converted/$1.csv
+	if python3 workflow_scripts/reformat-csv.py ${KUZU_CSV_DIR}${1}_0_0.csv test-data/converted/$1.csv
 	then
 		echo "reformatted $1"
 	else
@@ -25,4 +25,4 @@ reformat() {
 }
 export -f reformat
 
-cat scripts/csvs.txt | xargs -n 1 -P $(nproc) -I {} bash -c 'reformat "{}"' 
+cat workflow_scripts/csvs.txt | xargs -n 1 -P $(nproc) -I {} bash -c 'reformat "{}"' 
